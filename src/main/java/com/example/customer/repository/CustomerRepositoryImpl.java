@@ -57,6 +57,8 @@ public class CustomerRepositoryImpl implements CustomerRepository {
             customer.setId(rs.getInt("id"));
             customer.setFirstName(rs.getString("firstName"));
             customer.setLastName(rs.getString("lastName"));
+            customer.setPhone(rs.getString("phone"));
+            customer.setEmail(rs.getString("email"));
             return customer;
         }
 

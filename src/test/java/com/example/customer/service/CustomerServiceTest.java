@@ -33,7 +33,7 @@ public class CustomerServiceTest {
 
         customerService.add(customers);
         customers = customerService.get();
-        Assert.assertNotNull(customers);
+        assertTrue(customers.get(0).getEmail().equals("email@email.com"));
 
     }
 
