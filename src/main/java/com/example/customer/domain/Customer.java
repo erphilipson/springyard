@@ -1,9 +1,15 @@
-package com.example.customer.model;
+package com.example.customer.domain;
+
+import javax.persistence.*;
 
 /**
  * Created by Ethan on 8/3/17.
  */
+@Entity
+@Table(name = "customer")
 public class Customer {
+
+
     private int id;
     private String firstName;
     private String lastName;
@@ -11,6 +17,16 @@ public class Customer {
     private String email;
 
     public Customer() {
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getPhone() {
@@ -29,14 +45,7 @@ public class Customer {
         this.email = email;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    @Column(name= "firstname")
     public String getFirstName() {
         return firstName;
     }
@@ -45,11 +54,27 @@ public class Customer {
         this.firstName = firstName;
     }
 
+    @Column(name = "lastname")
     public String getLastName() {
         return lastName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Customer customer = (Customer) o;
+
+        return id == customer.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
     }
 }

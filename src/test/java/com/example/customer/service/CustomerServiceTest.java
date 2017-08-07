@@ -1,7 +1,6 @@
 package com.example.customer.service;
 
-import com.example.customer.model.Customer;
-import org.junit.Assert;
+import com.example.customer.domain.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
