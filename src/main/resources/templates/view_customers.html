@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Customers</title>
+</head>
+<body>
+<h1>A list of customers</h1>
+
+<ul th:each="customer: ${listOfCustomers}">
+    <li th:text="${customer.id}"></li>
+    <li th:text="${customer.firstName}"></li>
+    <li th:text="${customer.lastName}"></li>
+</ul>
+</body>
+</html>
