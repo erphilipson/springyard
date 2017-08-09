@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Customer Page</title>
+</head>
+<body>
+<a href="/customers">Back to customer list</a><br/>
+<span th:text="${'Customer ID: ' + customer.id}"></span><br/>
+<span th:text="${'First name: ' + customer.firstName}"></span><br/>
+<span th:text="${'Last name: ' + customer.lastName}"></span><br/>
+<span th:text="${'Phone number: ' + customer.phone}"></span><br/>
+<span th:text="${'Email: ' + customer.email}"></span>
+
+</body>
+</html>
